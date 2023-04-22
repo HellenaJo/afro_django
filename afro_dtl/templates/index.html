@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content%}
+{% load static %}
+
+    {% if user.is_authenticated %}
+    <h1>Welcome to the {{ pr_title }} dashboard.</h1>
+
+    {% else %}
+    <h1>Hello {{author}} and welcome to the {{ pr_title }} landing page.</h1>
+    {% endif %}
+
+    {% if gender == 'Male' %} 
+        <p>Greetings Sir.</p>
+    {% else %}
+        <p>Greetings Lady.</p>
+    {% endif %}
+    {% if author %}
+        <p>Thank you {{author}} for writing this code.</p>
+    {% endif %}
+
+{% endblock %}
