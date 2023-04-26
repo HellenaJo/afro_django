@@ -1,8 +1,8 @@
-# forms.py
 from django import forms
+from .models import User_form_model
 
-class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    email = forms.EmailField(max_length=50)
-    telephone = forms.IntegerField()
+class User_form(forms.ModelForm):
+    class Meta:
+        model = User_form_model
+        fields = ['name', 'email','occupation', 'message']
 
